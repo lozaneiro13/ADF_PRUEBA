@@ -1,0 +1,9 @@
+{
+	"name": "pruebacurso",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "ec50f446-8552-4a53-b971-092d4be5e612",
+		"tenantId": "daf7990e-8a3f-409c-9b76-2a5475098000"
+	}
+}
