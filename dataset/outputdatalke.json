@@ -13,9 +13,10 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"fileName": "datasetoutput.avro",
+				"folderPath": "datasetoutput",
 				"fileSystem": "contenedorprueba"
-			}
+			},
+			"avroCompressionCodec": null
 		},
 		"schema": {}
 	}

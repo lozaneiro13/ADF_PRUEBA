@@ -31,11 +31,13 @@
 						"storeSettings": {
 							"type": "AzureBlobFSWriteSettings",
 							"maxConcurrentConnections": 4,
-							"copyBehavior": "FlattenHierarchy",
+							"copyBehavior": "MergeFiles",
 							"blockSizeInMB": 100
 						},
 						"formatSettings": {
-							"type": "AvroWriteSettings"
+							"type": "AvroWriteSettings",
+							"maxRowsPerFile": 1000000,
+							"fileNamePrefix": "outputdataset"
 						}
 					},
 					"enableStaging": false,
