@@ -1,0 +1,22 @@
+{
+	"name": "outputdatalke",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_datalake",
+			"type": "LinkedServiceReference",
+			"parameters": {
+				"url": "https://datalakeprueba01.dfs.core.windows.net/"
+			}
+		},
+		"annotations": [],
+		"type": "Avro",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "datasetoutput.avro",
+				"fileSystem": "contenedorprueba"
+			}
+		},
+		"schema": {}
+	}
+}
