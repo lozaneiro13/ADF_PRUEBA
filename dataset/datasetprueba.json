@@ -1,0 +1,48 @@
+{
+	"name": "datasetprueba",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_prueba",
+			"type": "LinkedServiceReference",
+			"parameters": {
+				"accountname": {
+					"value": "@dataset().baseconnection",
+					"type": "Expression"
+				}
+			}
+		},
+		"parameters": {
+			"baseconnection": {
+				"type": "string"
+			},
+			"contenedor": {
+				"type": "string",
+				"defaultValue": "datasetprueba"
+			},
+			"archivo": {
+				"type": "string",
+				"defaultValue": "psam_pusa.csv"
+			}
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": {
+					"value": "@dataset().archivo",
+					"type": "Expression"
+				},
+				"container": {
+					"value": "@dataset().contenedor",
+					"type": "Expression"
+				}
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": []
+	}
+}
