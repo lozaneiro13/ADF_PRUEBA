@@ -64,7 +64,10 @@
 				"outputs": [
 					{
 						"referenceName": "outputdatalke",
-						"type": "DatasetReference"
+						"type": "DatasetReference",
+						"parameters": {
+							"filename": "pruebaejemplo_00000.avro"
+						}
 					}
 				]
 			}

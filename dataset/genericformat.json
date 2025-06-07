@@ -1,5 +1,5 @@
 {
-	"name": "outputdatalke",
+	"name": "genericformat",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "ls_datalake",
@@ -8,25 +8,18 @@
 				"url": "https://datalakeprueba01.dfs.core.windows.net/"
 			}
 		},
-		"parameters": {
-			"filename": {
-				"type": "string",
-				"defaultValue": "pruebaejemplo_00000.avro"
-			},
-			"directory": {
-				"type": "string",
-				"defaultValue": "datasetoutput"
-			}
-		},
 		"annotations": [],
-		"type": "Avro",
+		"type": "DelimitedText",
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
 				"fileSystem": "contenedorprueba"
 			},
-			"avroCompressionCodec": null
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
 		},
-		"schema": {}
+		"schema": []
 	}
 }
