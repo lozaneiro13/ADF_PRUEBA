@@ -20,18 +20,49 @@
 						"storeSettings": {
 							"type": "AzureBlobFSReadSettings",
 							"recursive": true,
+							"wildcardFolderPath": "datasetoutput",
+							"wildcardFileName": "*.avro",
 							"enablePartitionDiscovery": false
 						}
 					},
-					"enableStaging": false
+					"sink": {
+						"type": "DelimitedTextSink",
+						"storeSettings": {
+							"type": "AzureBlobFSWriteSettings",
+							"copyBehavior": "PreserveHierarchy"
+						},
+						"formatSettings": {
+							"type": "DelimitedTextWriteSettings",
+							"maxRowsPerFile": 40000,
+							"fileNamePrefix": "",
+							"quoteAllText": true,
+							"fileExtension": ".xml"
+						}
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
 				},
 				"inputs": [
 					{
 						"referenceName": "outputdatalke",
 						"type": "DatasetReference",
 						"parameters": {
-							"filename": "pruebaejemplo_00000.avro"
+							"filename": "*",
+							"directory": "datasetoutput"
 						}
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "genericformat",
+						"type": "DatasetReference"
 					}
 				]
 			}
